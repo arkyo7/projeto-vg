@@ -30,6 +30,8 @@ export const services: Service[] = [
     id: "sobrancelhas",
     image: "/images/servico-sobrancelhas.webp",
     icon: "Brush",
+    objectPosition: "center 25%",
+
     title: { pt: "Sobrancelhas", fr: "Sourcils" },
     description: {
       pt: "Realçamos a beleza que você já possui, respeitando seus traços e sua identidade.",
