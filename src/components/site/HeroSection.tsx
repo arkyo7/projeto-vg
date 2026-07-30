@@ -78,7 +78,9 @@ export function HeroSection() {
             priority
             rounded="rounded-[2rem]"
             className="lg:aspect-[5/4]"
+            objectPosition="center 30%"
           />
+
           <div
             aria-hidden="true"
             className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/4 rounded-l-[2rem] bg-gradient-to-r from-background/70 to-transparent lg:block"
