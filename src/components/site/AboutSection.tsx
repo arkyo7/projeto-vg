@@ -12,10 +12,14 @@ export function AboutSection() {
           <ImagePlaceholder
             src="/images/equipe-vieg-beaute.webp"
             alt={t.about.imageAlt}
-            ratio="4 / 3"
+            ratio={undefined}
+            className="aspect-[4/3] sm:aspect-[3/2] lg:aspect-auto lg:h-[480px]"
             rounded="rounded-3xl"
+            objectPosition="center top"
+            zoom
           />
         </Reveal>
+
 
         <Reveal delay={100} className="lg:pl-4">
           <div className="flex items-center gap-4">
