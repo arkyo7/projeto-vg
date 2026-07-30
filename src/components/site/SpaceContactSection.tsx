@@ -119,16 +119,8 @@ export function SpaceContactSection() {
               </a>
             </div>
           </Reveal>
-
-          <Reveal delay={180}>
-            <ImagePlaceholder
-              src="/images/espaco-atendimento.webp"
-              alt={t.space.imageAltSmall}
-              ratio="3 / 4"
-              rounded="rounded-3xl"
-            />
-          </Reveal>
         </div>
+
 
         <Reveal
           delay={80}
