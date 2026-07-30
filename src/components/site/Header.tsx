@@ -37,10 +37,18 @@ export function Header() {
         <div className="container-vieg flex h-[72px] items-center justify-between gap-6 lg:h-[80px]">
           <a
             href="#inicio"
-            className="font-heading text-[1.4rem] leading-none tracking-[0.08em] text-primary transition-colors hover:text-accent lg:text-[1.6rem]"
+            aria-label="VieG Beauté"
+            className="flex items-center transition-opacity duration-300 hover:opacity-80"
           >
-            VieG Beauté
+            <img
+              src="/images/logo-vieg-beaute.webp"
+              alt="VieG Beauté"
+              loading="eager"
+              decoding="async"
+              className="h-12 w-auto object-contain lg:h-14"
+            />
           </a>
+
 
           <nav aria-label="VieG Beauté" className="hidden lg:block">
             <ul className="flex items-center gap-7">

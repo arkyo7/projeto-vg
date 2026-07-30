@@ -4,10 +4,12 @@ export type Service = {
   id: string;
   image: string;
   icon: "Eye" | "Brush" | "Hand";
+  objectPosition?: string;
   title: Record<Language, string>;
   description: Record<Language, string>;
   items: Record<Language, string[]>;
 };
+
 
 export const services: Service[] = [
   {
@@ -28,6 +30,8 @@ export const services: Service[] = [
     id: "sobrancelhas",
     image: "/images/servico-sobrancelhas.webp",
     icon: "Brush",
+    objectPosition: "center 25%",
+
     title: { pt: "Sobrancelhas", fr: "Sourcils" },
     description: {
       pt: "Realçamos a beleza que você já possui, respeitando seus traços e sua identidade.",

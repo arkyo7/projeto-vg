@@ -46,6 +46,8 @@ export function AboutSection() {
             >
               VG
             </span>
+
+
           </div>
 
           <div
