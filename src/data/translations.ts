@@ -20,9 +20,22 @@ export type Translation = {
   values: { eyebrow: string; title: string; items: { title: string; text: string }[] };
   testimonials: Record<"eyebrow" | "title" | "role" | "rating", string>;
   space: Record<
-    "eyebrow" | "title" | "text" | "addressLabel" | "emailLabel" | "hoursLabel" | "hours" | "cta" | "imageAltLarge" | "imageAltSmall",
+    | "eyebrow"
+    | "title"
+    | "text"
+    | "addressLabel"
+    | "emailLabel"
+    | "hoursLabel"
+    | "hours"
+    | "cta"
+    | "phoneLabel"
+    | "instagramLabel"
+    | "instagramButton"
+    | "imageAltLarge"
+    | "imageAltSmall",
     string
   >;
+  common: Record<"whatsappAriaLabel" | "instagramAriaLabel", string>;
   contact: Record<"title" | "text" | "cta", string>;
   footer: {
     navTitle: string;
