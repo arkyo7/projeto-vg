@@ -30,7 +30,6 @@ export function ImagePlaceholder({
 }: ImagePlaceholderProps) {
   const [loaded, setLoaded] = useState(false);
   const imgRef = useRef<HTMLImageElement>(null);
-  const fileName = src.split("/").pop() ?? src;
 
   const style: CSSProperties = { aspectRatio: ratio };
 
@@ -57,10 +56,8 @@ export function ImagePlaceholder({
       >
         <span className="h-px w-10 bg-gold/60" />
         <span className="font-heading text-lg tracking-[0.2em] text-primary-light">VG</span>
-        <span className="font-body text-[10px] tracking-[0.12em] text-text-secondary/70">
-          {fileName}
-        </span>
       </div>
+
 
       <img
         ref={imgRef}
