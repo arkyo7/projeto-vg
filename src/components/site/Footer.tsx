@@ -1,10 +1,14 @@
-import { NAV_ITEMS, SITE } from "@/config/site";
+import { Clock3, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { NAV_ITEMS, SITE_CONFIG } from "@/config/site";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export function Footer() {
   const { t, language } = useLanguage();
   const year = new Date().getFullYear();
-  const address = language === "fr" ? SITE.addressFr : SITE.address;
+  const address = language === "fr" ? SITE_CONFIG.addressFr : SITE_CONFIG.address;
+  const linkClass =
+    "break-all transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
+
 
   return (
     <footer className="bg-taupe-deep text-text-light">
@@ -66,17 +70,40 @@ export function Footer() {
               {t.footer.contactTitle}
             </h3>
             <ul className="mt-4 space-y-2.5 font-body text-[13.5px] text-text-light/85">
-              <li>{address}</li>
-              <li>
+              <li className="flex items-start gap-2">
+                <MapPin size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <span>{address}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Instagram size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
                 <a
-                  href={`mailto:${SITE.email}`}
-                  className="break-all transition-colors hover:text-gold"
+                  href={SITE_CONFIG.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t.common.instagramAriaLabel}
+                  className={linkClass}
                 >
-                  {SITE.email}
+                  {SITE_CONFIG.instagramHandle}
                 </a>
               </li>
-              <li>{t.footer.hours}</li>
+              <li className="flex items-start gap-2">
+                <Phone size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <a href={SITE_CONFIG.phoneUrl} className={linkClass}>
+                  {SITE_CONFIG.phoneDisplay}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <a href={`mailto:${SITE_CONFIG.email}`} className={linkClass}>
+                  {SITE_CONFIG.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Clock3 size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <span>{t.footer.hours}</span>
+              </li>
             </ul>
+
           </div>
         </div>
 

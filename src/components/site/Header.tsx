@@ -1,13 +1,13 @@
 import { useEffect, useState } from "react";
 import { Menu } from "lucide-react";
-import { NAV_ITEMS, BOOKING_URL } from "@/config/site";
+import { NAV_ITEMS, createWhatsAppUrl } from "@/config/site";
 import { useLanguage } from "@/hooks/useLanguage";
 import { cn } from "@/lib/utils";
 import { LanguageSelector } from "./LanguageSelector";
 import { MobileMenu } from "./MobileMenu";
 
 export function Header() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const [active, setActive] = useState<string>("inicio");
 
@@ -67,7 +67,10 @@ export function Header() {
             <LanguageSelector />
 
             <a
-              href={BOOKING_URL}
+              href={createWhatsAppUrl(language)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.common.whatsappAriaLabel}
               className="hidden rounded-full bg-accent px-6 py-2.5 font-body text-[12.5px] font-medium tracking-wide text-accent-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary lg:inline-flex"
             >
               {t.nav.book}

@@ -1,10 +1,10 @@
-import { BOOKING_URL } from "@/config/site";
+import { createWhatsAppUrl } from "@/config/site";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { Reveal } from "./Reveal";
 
 export function HeroSection() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   return (
     <section id="inicio" className="relative overflow-hidden bg-background pt-[72px] lg:pt-[80px]">
@@ -53,7 +53,10 @@ export function HeroSection() {
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
-              href={BOOKING_URL}
+              href={createWhatsAppUrl(language)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.common.whatsappAriaLabel}
               className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 font-body text-sm font-medium text-accent-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary"
             >
               {t.hero.primary}

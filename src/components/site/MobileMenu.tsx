@@ -1,11 +1,11 @@
 import { useEffect } from "react";
 import { X } from "lucide-react";
-import { NAV_ITEMS, BOOKING_URL } from "@/config/site";
+import { NAV_ITEMS, createWhatsAppUrl } from "@/config/site";
 import { useLanguage } from "@/hooks/useLanguage";
 import { LanguageSelector } from "./LanguageSelector";
 
 export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => void }) {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
 
   useEffect(() => {
     if (!open) return;
@@ -64,7 +64,10 @@ export function MobileMenu({ open, onClose }: { open: boolean; onClose: () => vo
           <div className="mt-7 flex flex-col gap-4">
             <LanguageSelector className="self-start" />
             <a
-              href={BOOKING_URL}
+              href={createWhatsAppUrl(language)}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.common.whatsappAriaLabel}
               onClick={onClose}
               className="inline-flex w-full items-center justify-center rounded-full bg-accent px-7 py-3.5 font-body text-sm font-medium text-accent-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:bg-primary"
             >

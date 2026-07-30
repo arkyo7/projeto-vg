@@ -1,15 +1,20 @@
-import { Clock3, Mail, MapPin } from "lucide-react";
-import { BOOKING_URL, SITE } from "@/config/site";
+import { Clock3, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { SITE_CONFIG, createWhatsAppUrl } from "@/config/site";
 import { useLanguage } from "@/hooks/useLanguage";
 import { ImagePlaceholder } from "./ImagePlaceholder";
 import { Reveal } from "./Reveal";
 
 export function SpaceContactSection() {
   const { t, language } = useLanguage();
-  const address = language === "fr" ? SITE.addressFr : SITE.address;
+  const address = language === "fr" ? SITE_CONFIG.addressFr : SITE_CONFIG.address;
+  const whatsappUrl = createWhatsAppUrl(language);
+
+  const labelClass =
+    "block font-body text-[11px] uppercase tracking-[0.16em] text-text-secondary";
+  const valueClass = "mt-1 block font-body text-[14px] text-text-body";
 
   return (
-    <section id="espaco" className="section-y bg-surface">
+    <section id="espaco" className="section-y scroll-mt-28 bg-surface">
       <div className="container-vieg">
         <div className="grid items-center gap-10 lg:grid-cols-[36fr_30fr_28fr] lg:gap-8">
           <Reveal>
@@ -30,49 +35,87 @@ export function SpaceContactSection() {
               {t.space.text}
             </p>
 
-            <ul className="mt-8 space-y-5">
+            <ul id="contato" className="mt-8 scroll-mt-28 space-y-5">
               <li className="flex items-start gap-3">
-                <MapPin size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 text-gold" />
+                <MapPin size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
                 <span>
-                  <span className="block font-body text-[11px] uppercase tracking-[0.16em] text-text-secondary">
-                    {t.space.addressLabel}
-                  </span>
-                  <span className="mt-1 block font-body text-[14px] text-text-body">{address}</span>
+                  <span className={labelClass}>{t.space.addressLabel}</span>
+                  <span className={valueClass}>{address}</span>
                 </span>
               </li>
+
               <li className="flex items-start gap-3">
-                <Mail size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 text-gold" />
+                <Instagram size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
                 <span>
-                  <span className="block font-body text-[11px] uppercase tracking-[0.16em] text-text-secondary">
-                    {t.space.emailLabel}
-                  </span>
+                  <span className={labelClass}>{t.space.instagramLabel}</span>
                   <a
-                    href={`mailto:${SITE.email}`}
-                    className="mt-1 block break-all font-body text-[14px] text-text-body transition-colors hover:text-accent"
+                    href={SITE_CONFIG.instagramUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={t.common.instagramAriaLabel}
+                    className="mt-1 block font-body text-[14px] text-text-body underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
                   >
-                    {SITE.email}
+                    {SITE_CONFIG.instagramHandle}
                   </a>
                 </span>
               </li>
+
               <li className="flex items-start gap-3">
-                <Clock3 size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 text-gold" />
+                <Phone size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
                 <span>
-                  <span className="block font-body text-[11px] uppercase tracking-[0.16em] text-text-secondary">
-                    {t.space.hoursLabel}
-                  </span>
-                  <span className="mt-1 block font-body text-[14px] text-text-body">
-                    {t.space.hours}
-                  </span>
+                  <span className={labelClass}>{t.space.phoneLabel}</span>
+                  <a
+                    href={SITE_CONFIG.phoneUrl}
+                    className="mt-1 block font-body text-[14px] text-text-body underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  >
+                    {SITE_CONFIG.phoneDisplay}
+                  </a>
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <Mail size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <span>
+                  <span className={labelClass}>{t.space.emailLabel}</span>
+                  <a
+                    href={`mailto:${SITE_CONFIG.email}`}
+                    className="mt-1 block break-all font-body text-[14px] text-text-body underline-offset-4 transition-colors hover:text-accent hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-accent"
+                  >
+                    {SITE_CONFIG.email}
+                  </a>
+                </span>
+              </li>
+
+              <li className="flex items-start gap-3">
+                <Clock3 size={17} strokeWidth={1.4} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <span>
+                  <span className={labelClass}>{t.space.hoursLabel}</span>
+                  <span className={valueClass}>{t.space.hours}</span>
                 </span>
               </li>
             </ul>
 
-            <a
-              href={BOOKING_URL}
-              className="mt-9 inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 font-body text-sm font-medium text-accent-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary"
-            >
-              {t.space.cta}
-            </a>
+            <div className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t.common.whatsappAriaLabel}
+                className="inline-flex items-center justify-center rounded-full bg-accent px-8 py-3.5 text-center font-body text-sm font-medium text-accent-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                {t.space.cta}
+              </a>
+              <a
+                href={SITE_CONFIG.instagramUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={t.common.instagramAriaLabel}
+                className="inline-flex items-center justify-center gap-2 rounded-full border border-primary/40 px-7 py-3.5 text-center font-body text-sm font-medium text-primary transition-all duration-300 hover:border-primary hover:bg-background-secondary/70 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
+              >
+                <Instagram size={16} strokeWidth={1.5} aria-hidden="true" />
+                {t.space.instagramButton}
+              </a>
+            </div>
           </Reveal>
 
           <Reveal delay={180}>
@@ -89,7 +132,7 @@ export function SpaceContactSection() {
           delay={80}
           className="mt-16 rounded-[2rem] border border-border bg-background px-6 py-12 text-center sm:px-10 lg:mt-20 lg:py-16"
         >
-          <div id="contato" className="scroll-mt-32">
+          <div>
             <span aria-hidden="true" className="mx-auto mb-6 block h-px w-14 bg-gold/70" />
             <h2 className="mx-auto max-w-xl font-heading text-[2rem] leading-[1.12] text-primary lg:text-[2.5rem]">
               {t.contact.title}
@@ -98,8 +141,11 @@ export function SpaceContactSection() {
               {t.contact.text}
             </p>
             <a
-              href={BOOKING_URL}
-              className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-9 py-3.5 font-body text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent"
+              href={whatsappUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={t.common.whatsappAriaLabel}
+              className="mt-8 inline-flex items-center justify-center rounded-full bg-primary px-9 py-3.5 font-body text-sm font-medium text-primary-foreground shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-0.5 hover:bg-accent focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
             >
               {t.contact.cta}
             </a>

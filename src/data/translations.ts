@@ -20,9 +20,22 @@ export type Translation = {
   values: { eyebrow: string; title: string; items: { title: string; text: string }[] };
   testimonials: Record<"eyebrow" | "title" | "role" | "rating", string>;
   space: Record<
-    "eyebrow" | "title" | "text" | "addressLabel" | "emailLabel" | "hoursLabel" | "hours" | "cta" | "imageAltLarge" | "imageAltSmall",
+    | "eyebrow"
+    | "title"
+    | "text"
+    | "addressLabel"
+    | "emailLabel"
+    | "hoursLabel"
+    | "hours"
+    | "cta"
+    | "phoneLabel"
+    | "instagramLabel"
+    | "instagramButton"
+    | "imageAltLarge"
+    | "imageAltSmall",
     string
   >;
+  common: Record<"whatsappAriaLabel" | "instagramAriaLabel", string>;
   contact: Record<"title" | "text" | "cta", string>;
   footer: {
     navTitle: string;
@@ -104,8 +117,15 @@ const pt: Translation = {
     hoursLabel: "Atendimento",
     hours: "Somente com hora marcada",
     cta: "Agendar horário",
+    phoneLabel: "Telefone",
+    instagramLabel: "Instagram",
+    instagramButton: "Ver no Instagram",
     imageAltLarge: "Recepção do studio VieG Beauté",
     imageAltSmall: "Atendimento no studio VieG Beauté",
+  },
+  common: {
+    whatsappAriaLabel: "Agendar horário pelo WhatsApp",
+    instagramAriaLabel: "Abrir o Instagram da VieG Beauté",
   },
   contact: {
     title: "Pronta para viver sua experiência VieG?",
@@ -189,11 +209,18 @@ const fr: Translation = {
     text: "Un environnement conçu pour offrir confort, attention et une expérience unique lors de chaque rendez-vous.",
     addressLabel: "Adresse",
     emailLabel: "E-mail",
-    hoursLabel: "Rendez-vous",
+    hoursLabel: "Sur rendez-vous",
     hours: "Uniquement sur rendez-vous",
     cta: "Prendre rendez-vous",
+    phoneLabel: "Téléphone",
+    instagramLabel: "Instagram",
+    instagramButton: "Voir sur Instagram",
     imageAltLarge: "Réception du studio VieG Beauté",
     imageAltSmall: "Prestation au studio VieG Beauté",
+  },
+  common: {
+    whatsappAriaLabel: "Prendre rendez-vous via WhatsApp",
+    instagramAriaLabel: "Ouvrir l’Instagram de VieG Beauté",
   },
   contact: {
     title: "Prête à vivre votre expérience VieG ?",
