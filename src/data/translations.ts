@@ -117,8 +117,15 @@ const pt: Translation = {
     hoursLabel: "Atendimento",
     hours: "Somente com hora marcada",
     cta: "Agendar horário",
+    phoneLabel: "Telefone",
+    instagramLabel: "Instagram",
+    instagramButton: "Ver no Instagram",
     imageAltLarge: "Recepção do studio VieG Beauté",
     imageAltSmall: "Atendimento no studio VieG Beauté",
+  },
+  common: {
+    whatsappAriaLabel: "Agendar horário pelo WhatsApp",
+    instagramAriaLabel: "Abrir o Instagram da VieG Beauté",
   },
   contact: {
     title: "Pronta para viver sua experiência VieG?",
