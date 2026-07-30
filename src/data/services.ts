@@ -4,10 +4,12 @@ export type Service = {
   id: string;
   image: string;
   icon: "Eye" | "Brush" | "Hand";
+  objectPosition?: string;
   title: Record<Language, string>;
   description: Record<Language, string>;
   items: Record<Language, string[]>;
 };
+
 
 export const services: Service[] = [
   {
