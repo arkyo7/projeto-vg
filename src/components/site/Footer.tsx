@@ -13,21 +13,28 @@ export function Footer() {
   return (
     <footer className="bg-taupe-deep text-text-light">
       <div className="container-vieg relative py-14 lg:py-16">
-        <span
+        <img
+          src="/images/logo-monograma-vg.webp"
+          alt=""
           aria-hidden="true"
-          className="pointer-events-none absolute right-6 top-10 hidden font-heading text-[6rem] leading-none tracking-[0.1em] text-text-light/[0.06] lg:block"
-        >
-          VG
-        </span>
+          loading="lazy"
+          decoding="async"
+          className="pointer-events-none absolute right-6 top-10 hidden h-24 w-24 object-contain opacity-[0.12] lg:block"
+        />
 
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
           <div>
-            <p className="font-heading text-[1.6rem] tracking-[0.07em] text-text-light">
-              VieG Beauté
-            </p>
+            <img
+              src="/images/logo-vieg-beaute.webp"
+              alt="VieG Beauté"
+              loading="lazy"
+              decoding="async"
+              className="h-14 w-auto object-contain"
+            />
             <p className="mt-2 font-signature text-[1.6rem] text-gold">{t.hero.slogan}</p>
             <span aria-hidden="true" className="mt-5 block h-px w-12 bg-accent" />
           </div>
+
 
           <nav aria-label={t.footer.navTitle}>
             <h3 className="font-body text-[11px] uppercase tracking-[0.18em] text-text-light/60">
