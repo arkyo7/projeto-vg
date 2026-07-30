@@ -78,7 +78,7 @@ export function ImagePlaceholder({
           "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
           loaded ? "opacity-100" : "opacity-0",
           zoom &&
-            "motion-safe:transition-[opacity,transform] motion-safe:duration-700 motion-safe:ease-out motion-safe:group-hover/img:scale-[1.025]",
+            "motion-safe:transition-[opacity,transform] motion-safe:duration-[550ms] motion-safe:ease-out lg:motion-safe:group-hover/img:scale-[1.04]",
           imageClassName,
         )}
 
