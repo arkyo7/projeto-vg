@@ -5,7 +5,36 @@ export const LANGUAGES: { code: Language; label: string; short: string; htmlLang
   { code: "fr", label: "Français", short: "FR", htmlLang: "fr-BE" },
 ];
 
-const pt = {
+export type Translation = {
+  meta: { title: string; description: string };
+  nav: Record<
+    "home" | "about" | "services" | "space" | "testimonials" | "contact" | "book" | "openMenu" | "closeMenu" | "language",
+    string
+  >;
+  hero: Record<"slogan" | "text1" | "text2" | "primary" | "secondary" | "imageAlt", string>;
+  about: Record<
+    "eyebrow" | "title" | "text1" | "text2" | "cta" | "imageAlt" | "storyEyebrow" | "story",
+    string
+  >;
+  services: Record<"eyebrow" | "title" | "more", string>;
+  values: { eyebrow: string; title: string; items: { title: string; text: string }[] };
+  testimonials: Record<"eyebrow" | "title" | "role" | "rating", string>;
+  space: Record<
+    "eyebrow" | "title" | "text" | "addressLabel" | "emailLabel" | "hoursLabel" | "hours" | "cta" | "imageAltLarge" | "imageAltSmall",
+    string
+  >;
+  contact: Record<"title" | "text" | "cta", string>;
+  footer: {
+    navTitle: string;
+    servicesTitle: string;
+    contactTitle: string;
+    services: string[];
+    hours: string;
+    rights: string;
+  };
+};
+
+const pt: Translation = {
   meta: {
     title: "VieG Beauté | Cílios, Sobrancelhas e Unhas em Ixelles",
     description:
@@ -91,9 +120,9 @@ const pt = {
     hours: "Atendimento somente com hora marcada",
     rights: "Todos os direitos reservados.",
   },
-} as const;
+};
 
-const fr: typeof pt = {
+const fr: Translation = {
   meta: {
     title: "VieG Beauté | Cils, Sourcils et Ongles à Ixelles",
     description:
@@ -181,5 +210,4 @@ const fr: typeof pt = {
   },
 };
 
-export const translations = { pt, fr };
-export type Translation = typeof pt;
+export const translations: Record<Language, Translation> = { pt, fr };
