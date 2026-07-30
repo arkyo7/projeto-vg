@@ -201,3 +201,29 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Botões com transição suave, sombra e elevação */
+.vieg-button {
+  transition:
+    transform 300ms ease,
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+}
+
+.vieg-button:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lift);
+}
+
+.vieg-button:active {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .vieg-button:hover,
+  .vieg-button:active {
+    transform: none;
+  }
+}
