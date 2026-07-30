@@ -77,8 +77,11 @@ export function ImagePlaceholder({
         className={cn(
           "absolute inset-0 h-full w-full object-cover transition-opacity duration-500",
           loaded ? "opacity-100" : "opacity-0",
+          zoom &&
+            "motion-safe:transition-[opacity,transform] motion-safe:duration-500 motion-safe:ease-out motion-safe:group-hover/img:scale-105",
           imageClassName,
         )}
+
         style={{ objectPosition }}
       />
     </div>
