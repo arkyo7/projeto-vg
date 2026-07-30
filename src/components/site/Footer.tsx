@@ -70,17 +70,40 @@ export function Footer() {
               {t.footer.contactTitle}
             </h3>
             <ul className="mt-4 space-y-2.5 font-body text-[13.5px] text-text-light/85">
-              <li>{address}</li>
-              <li>
+              <li className="flex items-start gap-2">
+                <MapPin size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <span>{address}</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <Instagram size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
                 <a
-                  href={`mailto:${SITE.email}`}
-                  className="break-all transition-colors hover:text-gold"
+                  href={SITE_CONFIG.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t.common.instagramAriaLabel}
+                  className={linkClass}
                 >
-                  {SITE.email}
+                  {SITE_CONFIG.instagramHandle}
                 </a>
               </li>
-              <li>{t.footer.hours}</li>
+              <li className="flex items-start gap-2">
+                <Phone size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <a href={SITE_CONFIG.phoneUrl} className={linkClass}>
+                  {SITE_CONFIG.phoneDisplay}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Mail size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <a href={`mailto:${SITE_CONFIG.email}`} className={linkClass}>
+                  {SITE_CONFIG.email}
+                </a>
+              </li>
+              <li className="flex items-start gap-2">
+                <Clock3 size={14} strokeWidth={1.5} aria-hidden="true" className="mt-0.5 shrink-0 text-gold" />
+                <span>{t.footer.hours}</span>
+              </li>
             </ul>
+
           </div>
         </div>
 
