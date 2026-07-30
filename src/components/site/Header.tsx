@@ -45,7 +45,7 @@ export function Header() {
               alt="VieG Beauté"
               loading="eager"
               decoding="async"
-              className="h-10 w-auto object-contain lg:h-12"
+              className="h-12 w-auto object-contain lg:h-14"
             />
           </a>
 
