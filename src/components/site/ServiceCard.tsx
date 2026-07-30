@@ -19,7 +19,9 @@ export function ServiceCard({ service }: { service: Service }) {
           rounded="rounded-none"
           className="border-0 border-b border-border"
           objectPosition={service.objectPosition ?? "center"}
+          zoom
         />
+
 
         <span
           aria-hidden="true"

@@ -16,17 +16,19 @@ export function SpaceContactSection() {
   return (
     <section id="espaco" className="section-y scroll-mt-28 bg-surface">
       <div className="container-vieg">
-        <div className="grid items-center gap-10 lg:grid-cols-[36fr_30fr_28fr] lg:gap-8">
+        <div className="mx-auto grid max-w-5xl items-center gap-10 lg:grid-cols-2 lg:gap-14">
           <Reveal>
             <ImagePlaceholder
               src="/images/espaco-recepcao.webp"
               alt={t.space.imageAltLarge}
               ratio="4 / 5"
               rounded="rounded-3xl"
+              zoom
             />
           </Reveal>
 
-          <Reveal delay={100} className="lg:px-2">
+          <Reveal delay={100}>
+
             <p className="eyebrow">{t.space.eyebrow}</p>
             <h2 className="mt-4 font-heading text-[2.2rem] leading-[1.1] text-primary lg:text-[2.6rem]">
               {t.space.title}
@@ -117,16 +119,8 @@ export function SpaceContactSection() {
               </a>
             </div>
           </Reveal>
-
-          <Reveal delay={180}>
-            <ImagePlaceholder
-              src="/images/espaco-atendimento.webp"
-              alt={t.space.imageAltSmall}
-              ratio="3 / 4"
-              rounded="rounded-3xl"
-            />
-          </Reveal>
         </div>
+
 
         <Reveal
           delay={80}

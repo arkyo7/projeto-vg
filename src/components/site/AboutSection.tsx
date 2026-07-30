@@ -12,10 +12,14 @@ export function AboutSection() {
           <ImagePlaceholder
             src="/images/equipe-vieg-beaute.webp"
             alt={t.about.imageAlt}
-            ratio="4 / 3"
+            ratio={undefined}
+            className="aspect-[4/3] sm:aspect-[3/2] lg:aspect-auto lg:h-[480px]"
             rounded="rounded-3xl"
+            objectPosition="center top"
+            zoom
           />
         </Reveal>
+
 
         <Reveal delay={100} className="lg:pl-4">
           <div className="flex items-center gap-4">
@@ -42,10 +46,18 @@ export function AboutSection() {
 
             <span
               aria-hidden="true"
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/50 font-heading text-lg tracking-[0.14em] text-gold"
+              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/50"
             >
-              VG
+              <img
+                src="/images/logo-monograma-vg.webp"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="h-8 w-8 object-contain"
+              />
             </span>
+
 
 
           </div>
