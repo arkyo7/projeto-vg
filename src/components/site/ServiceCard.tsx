@@ -18,7 +18,9 @@ export function ServiceCard({ service }: { service: Service }) {
           ratio="4 / 3"
           rounded="rounded-none"
           className="border-0 border-b border-border"
+          objectPosition={service.objectPosition ?? "center"}
         />
+
         <span
           aria-hidden="true"
           className="absolute -bottom-6 left-6 flex h-12 w-12 items-center justify-center rounded-full border border-border bg-surface text-gold shadow-[var(--shadow-soft)]"
