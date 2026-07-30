@@ -42,10 +42,18 @@ export function AboutSection() {
 
             <span
               aria-hidden="true"
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/50 font-heading text-lg tracking-[0.14em] text-gold"
+              className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-full border border-gold/50"
             >
-              VG
+              <img
+                src="/images/logo-monograma-vg.webp"
+                alt=""
+                aria-hidden="true"
+                loading="lazy"
+                decoding="async"
+                className="h-9 w-9 object-contain"
+              />
             </span>
+
           </div>
 
           <div
