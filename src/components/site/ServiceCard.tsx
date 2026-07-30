@@ -10,7 +10,7 @@ export function ServiceCard({ service }: { service: Service }) {
   const Icon = icons[service.icon];
 
   return (
-    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1 hover:shadow-[var(--shadow-lift)]">
+    <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-border bg-surface shadow-[var(--shadow-soft)] transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--shadow-lift)]">
       <div className="relative">
         <ImagePlaceholder
           src={service.image}
