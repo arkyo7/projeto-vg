@@ -1,10 +1,14 @@
-import { NAV_ITEMS, SITE } from "@/config/site";
+import { Clock3, Instagram, Mail, MapPin, Phone } from "lucide-react";
+import { NAV_ITEMS, SITE_CONFIG } from "@/config/site";
 import { useLanguage } from "@/hooks/useLanguage";
 
 export function Footer() {
   const { t, language } = useLanguage();
   const year = new Date().getFullYear();
-  const address = language === "fr" ? SITE.addressFr : SITE.address;
+  const address = language === "fr" ? SITE_CONFIG.addressFr : SITE_CONFIG.address;
+  const linkClass =
+    "break-all transition-colors hover:text-gold focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-gold";
+
 
   return (
     <footer className="bg-taupe-deep text-text-light">
