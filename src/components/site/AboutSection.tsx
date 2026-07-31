@@ -39,27 +39,13 @@ export function AboutSection() {
             <p>{t.about.text2}</p>
           </div>
 
-          <div className="mt-8 flex flex-wrap items-center gap-6">
+          <div className="mt-8">
             <a
               href="#nossa-historia"
               className="vieg-button inline-flex items-center justify-center rounded-full border border-primary/40 px-7 py-3 font-body text-sm font-medium text-primary hover:border-primary hover:bg-primary hover:text-primary-foreground"
             >
               {t.about.cta}
             </a>
-
-            <span
-              aria-hidden="true"
-              className="flex h-14 w-14 items-center justify-center rounded-full border border-gold/50"
-            >
-              <img
-                src="/images/logo-monograma-vg.webp"
-                alt=""
-                aria-hidden="true"
-                loading="lazy"
-                decoding="async"
-                className="h-8 w-8 object-contain"
-              />
-            </span>
           </div>
 
           <div
