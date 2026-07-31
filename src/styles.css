@@ -227,3 +227,65 @@
     transform: none;
   }
 }
+
+/* Interações sutis de imagens e cards */
+#inicio .group\/img,
+#sobre .group\/img,
+#espaco .group\/img,
+#servicos article,
+#depoimentos article,
+.bg-taupe li,
+#espaco .container-vieg > .reveal:last-child {
+  transition:
+    transform 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 500ms cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 500ms ease,
+    background-color 500ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) and (min-width: 1024px) {
+  #inicio .group\/img:hover,
+  #sobre .group\/img:hover,
+  #espaco .group\/img:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in oklab, var(--color-gold) 40%, transparent);
+    box-shadow: var(--shadow-lift);
+  }
+
+  #servicos article:hover {
+    transform: translateY(-8px);
+    border-color: color-mix(in oklab, var(--color-gold) 40%, transparent);
+    box-shadow: var(--shadow-lift);
+  }
+
+  #depoimentos article:hover {
+    transform: translateY(-6px);
+    border-color: color-mix(in oklab, var(--color-gold) 40%, transparent);
+    box-shadow: var(--shadow-lift);
+  }
+
+  .bg-taupe li:hover {
+    transform: translateY(-4px);
+    border-radius: 1rem;
+    background-color: color-mix(in oklab, var(--color-text-light) 6%, transparent);
+    box-shadow: var(--shadow-soft);
+  }
+
+  #espaco .container-vieg > .reveal:last-child:hover {
+    transform: translateY(-5px);
+    border-color: color-mix(in oklab, var(--color-gold) 40%, transparent);
+    box-shadow: var(--shadow-lift);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #inicio .group\/img:hover,
+  #sobre .group\/img:hover,
+  #espaco .group\/img:hover,
+  #servicos article:hover,
+  #depoimentos article:hover,
+  .bg-taupe li:hover,
+  #espaco .container-vieg > .reveal:last-child:hover {
+    transform: none !important;
+  }
+}
