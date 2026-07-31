@@ -105,11 +105,6 @@ export function HeroSection() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-y-0 left-0 hidden w-1/4 rounded-l-[2rem] bg-gradient-to-r from-background/70 to-transparent lg:block"
           />
-
-          <span
-            aria-hidden="true"
-            className="absolute -bottom-4 -left-4 hidden h-24 w-24 rounded-full border border-gold/40 lg:block"
-          />
         </Reveal>
       </div>
     </section>
